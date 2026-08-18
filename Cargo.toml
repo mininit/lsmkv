@@ -1,0 +1,10 @@
+[package]
+name = "lsmkv"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.6.6", features = ["derive"] }
+matroska = "0.30.1"
+walkdir = "2.5.0"
