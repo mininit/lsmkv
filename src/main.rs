@@ -103,7 +103,7 @@ fn print_mkv_info(path: &Path) {
         "{:>6.1}Mbps {:>7} {:>6.1}min {:>5} {display_path}",
         megabits_per_second,
         format_file_size(file_size),
-        duration_seconds,
+        duration_seconds / 60.0,
         find_video_codec(&mkv),
     );
 }
