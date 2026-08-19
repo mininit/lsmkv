@@ -92,7 +92,17 @@ $ lsmkv .
 ### Sorting
 
 `lsmkv` streams output instantly and does not sort. Pipe through `sort` instead:
-
 ```bash
 lsmkv ~/Videos | sort -k1,1 -rn   # highest bitrate first
+```
+
+### Filtering
+
+```bash
+lsmkv ~/Videos | grep 'H\.264'   # show only H.264 encoded files
+```
+
+`grep` matches anywhere in the line, so it's fine for quick checks. For exact column matching, use `awk`:
+```bash
+lsmkv ~/Videos | awk '$4 == "AV1"'   # show only AV1 encoded files
 ```
