@@ -4,7 +4,7 @@ use clap::Parser;
 use std::path::PathBuf;
 
 #[derive(Parser)]
-#[command(name = "lsmkv", version, about)]
+#[command(name = "lsmkv", version)]
 struct CommandLineArguments {
     paths: Vec<PathBuf>,
 }
@@ -26,11 +26,11 @@ fn main() {
         } else if path.is_file() {
             mkv_files.push(path.clone());
         } else {
-            eprintln!("Not found: {}", path.display());
+            eprintln!("No such file or directory: {}", path.display());
         }
     }
 
     for path in &mkv_files {
-        lsmkv::print_mkv_info(path);
+        lsmkv::print_mkv_info_line(path);
     }
 }

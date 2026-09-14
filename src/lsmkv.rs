@@ -53,7 +53,7 @@ pub fn find_video_codec(mkv: &Matroska) -> &str {
         .unwrap_or("unknown")
 }
 
-pub fn print_mkv_info(path: &Path) {
+pub fn print_mkv_info_line(path: &Path) {
     let display_path = path.display();
 
     let file = match File::open(path) {
